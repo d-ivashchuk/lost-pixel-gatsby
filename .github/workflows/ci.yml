@@ -20,7 +20,7 @@ jobs:
         run: npx gatsby build --prefix-paths
 
       - name: Run Gatsby app
-        run: npx gatsby serve &
+        run: npx gatsby serve --host 172.17.0.1 &
 
       - name: Lost Pixel
         uses: lost-pixel/lost-pixel@v2.21.0
