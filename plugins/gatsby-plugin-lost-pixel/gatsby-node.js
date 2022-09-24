@@ -28,6 +28,8 @@ exports.onPostBuild = async ({ graphql, pathPrefix, basePath = pathPrefix }, plu
   const { data } = await graphql(query)
 
   // Construct the pages json by iterating over the mdx files.
+
+  console.log({ edges: data.allSitePage.edges })
   const pages = data.allSitePage.edges
     .map((edge, i) => {
       // Skip explicitly excluded paths
@@ -37,7 +39,7 @@ exports.onPostBuild = async ({ graphql, pathPrefix, basePath = pathPrefix }, plu
 
       return {
         path: edge.node.path,
-        name: edge.node.path.replaceAll('/', '-'),
+        name: edge.node.path.split('/').join('-'),
       }
     })
     .filter((edge) => edge !== null)
