@@ -15,7 +15,12 @@ jobs:
           cache: 'npm'
           node-version: '14'
       - run: npm ci
-      - run: NODE_OPTIONS=--max-old-space-size=4096 npm run serve &
+
+      - name: Build Gatsby app
+        run: npx gatsby build
+
+      - name: Run Gatsby app
+        run: npx gatsby serve &
 
       - name: Lost Pixel
         uses: lost-pixel/lost-pixel@v2.21.0
