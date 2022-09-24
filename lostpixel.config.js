@@ -3,7 +3,7 @@ module.exports = {
     // write your pages here
     pages: [],
     // you create your pages here & both are composed
-    pagesJsonUrl: 'https://172.17.0.1:9000/lost-pixel.json',
+    pagesJsonUrl: 'http://172.17.0.1:9000/lost-pixel.json',
     baseUrl: 'http://172.17.0.1:9000',
     lostPixelProjectId: 'cl8fqnk7033927301m93b5rhis9',
     ciBuildId: process.env.GITHUB_RUN_ID,
