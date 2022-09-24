@@ -1,0 +1,24 @@
+name: CI
+
+on: [push]
+
+jobs:
+  gatsby-for-percy:
+    name: Percy screenshots via Gatsby build
+    runs-on: ubuntu-latest
+    env:
+      PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: 'npm'
+          node-version: '14'
+      - run: npm ci
+      - run: NODE_OPTIONS=--max-old-space-size=4096 npm run serve &
+
+      - name: Lost Pixel
+        uses: lost-pixel/lost-pixel@v2.21.0
+        env:
+          S3_ACCESS_KEY: ${{ secrets.S3_ACCESS_KEY }}
+          S3_SECRET_KEY: ${{ secrets.S3_SECRET_KEY }}
