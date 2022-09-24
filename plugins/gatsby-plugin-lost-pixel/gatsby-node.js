@@ -33,6 +33,8 @@ exports.onPostBuild = async ({ graphql, pathPrefix, basePath = pathPrefix }, plu
       // Skip explicitly excluded paths
       if (excludedPaths.includes(edge.node.path)) return null
 
+      console.log({ path: edge.node.path })
+
       return {
         path: edge.node.path,
         name: edge.node.path.replaceAll('/', '-'),

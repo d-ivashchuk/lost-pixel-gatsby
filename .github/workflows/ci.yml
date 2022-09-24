@@ -17,7 +17,7 @@ jobs:
       - run: npm ci
 
       - name: Build Gatsby app
-        run: npx gatsby build
+        run: npx gatsby build --prefix-paths
 
       - name: Run Gatsby app
         run: npx gatsby serve &
