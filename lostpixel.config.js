@@ -19,5 +19,4 @@ module.exports = {
       secretKey: process.env.S3_SECRET_KEY,
     },
   },
-  generateOnly: true,
 }
