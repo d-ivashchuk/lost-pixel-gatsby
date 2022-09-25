@@ -32,7 +32,7 @@ jobs:
           CI: true
 
       - name: Run Gatsby app
-        run: npx gatsby serve --host 172.17.0.1 &
+        run: NODE_OPTIONS=--max-old-space-size=4096 npx gatsby serve --host 172.17.0.1 &
 
       - name: Lost Pixel
         uses: lost-pixel/lost-pixel@54fadbfe21aceb07870ae3399fcc63c88aa064d4
