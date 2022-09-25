@@ -13,6 +13,7 @@ module.exports = {
   commitRef: process.env.GITHUB_REF,
   commitRefName: process.env.GITHUB_REF_NAME,
   commitHash: process.env.COMMIT_HASH,
+  compareEngine: 'odiff',
   s3: {
     endPoint: 'ams3.digitaloceanspaces.com',
     bucketName: 'beta-seven-turtle-time-blue-narrow',
