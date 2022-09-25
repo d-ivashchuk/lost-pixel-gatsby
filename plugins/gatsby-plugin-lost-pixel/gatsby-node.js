@@ -43,7 +43,7 @@ exports.onPostBuild = async ({ graphql, pathPrefix, basePath = pathPrefix }, plu
       }
     })
     .filter((edge) => edge !== null)
-    .slice(0, 100)
+    .slice(300, 150)
 
   await fsPromises.writeFile(outputFile, JSON.stringify(pages))
 }
