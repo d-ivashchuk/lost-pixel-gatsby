@@ -19,4 +19,20 @@ module.exports = {
     accessKey: process.env.S3_ACCESS_KEY,
     secretKey: process.env.S3_SECRET_KEY,
   },
+  beforeScreenshot: async (page) => {
+    await page.addStyleTag({
+      content: `iframe {
+      visibility: hidden;
+    }
+  
+    section img {
+      visibility: hidden;
+    }
+    
+    /* hide cookie banner */
+    #onetrust-consent-sdk {
+      display: none;
+    }`,
+    })
+  },
 }
