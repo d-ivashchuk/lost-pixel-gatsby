@@ -13,6 +13,7 @@ jobs:
           cache: 'npm'
           node-version: '14'
       - run: npm ci
+      - run: cd node_modules/odiff-bin && npm run postinstall
 
       - name: Caching Gatsby
         id: gatsby-cache-build
