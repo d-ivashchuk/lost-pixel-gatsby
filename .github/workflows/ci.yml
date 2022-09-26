@@ -13,11 +13,6 @@ jobs:
           cache: 'npm'
           node-version: '14'
       - run: npm ci
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-
-      - run: cd node_modules/odiff-bin && npm run postinstall
-
       - name: Caching Gatsby
         id: gatsby-cache-build
         uses: actions/cache@v2
