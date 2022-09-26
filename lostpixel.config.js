@@ -23,7 +23,7 @@ module.exports = {
     accessKey: process.env.S3_ACCESS_KEY,
     secretKey: process.env.S3_SECRET_KEY,
   },
-  compareConcurrency: 5,
+  compareConcurrency: 10,
   beforeScreenshot: async (page) => {
     await page.addStyleTag({
       content: `iframe {
