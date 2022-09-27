@@ -238,11 +238,11 @@ const TreeNode = ({
                 <ArrowRight className={`right ${isOpen}`} />
                 <ArrowDown className={`down ${isOpen}`} />
               </button>
-              <span className={`${codeStyle ? 'inline-code' : ''}`}>Deploy to vercel</span>
+              <span className={`${codeStyle ? 'inline-code' : ''}`}>{navTitle || title}</span>
             </span>
           ) : (
             <span className={`${codeStyle ? 'inline-code' : ''}`} onClick={collapse}>
-              View your schema
+              {navTitle || title}
             </span>
           )}
           {duration && <span className="tag">{duration}</span>}
