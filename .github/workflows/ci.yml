@@ -13,21 +13,22 @@ jobs:
           cache: 'npm'
           node-version: '14'
       - run: npm ci
-      # - name: Caching Gatsby
-      #   id: gatsby-cache-build
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: |
-      #       public
-      #       .cache
-      #     key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-gatsby-build-
+      - name: Caching Gatsby
+        id: gatsby-cache-build
+        uses: actions/cache@v2
+        with:
+          path: |
+            public
+            .cache
+          key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-gatsby-build-
+
       - name: Build Gatsby app
-        # run: npx gatsby build --prefix-paths
-        # env:
-        #   GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
-        #   CI: true
+        run: npx gatsby build --prefix-paths
+        env:
+          GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
+          CI: true
 
       - name: Run Gatsby app
         run: npx gatsby serve --host 172.17.0.1 &
