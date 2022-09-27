@@ -238,11 +238,11 @@ const TreeNode = ({
                 <ArrowRight className={`right ${isOpen}`} />
                 <ArrowDown className={`down ${isOpen}`} />
               </button>
-              <span className={`${codeStyle ? 'inline-code' : ''}`}>{navTitle || title}</span>
+              <span className={`${codeStyle ? 'inline-code' : ''}`}>Deploy to vercel</span>
             </span>
           ) : (
             <span className={`${codeStyle ? 'inline-code' : ''}`} onClick={collapse}>
-              {navTitle || title}
+              View your schema
             </span>
           )}
           {duration && <span className="tag">{duration}</span>}
@@ -251,7 +251,6 @@ const TreeNode = ({
           {earlyaccess && <span className="tag small">Early Access</span>}
         </Link>
       )}
-
       {!isCollapsed && hasChildren ? (
         <List className={`${hasBorder ? 'has-border' : ''}`}>
           {items.map((item: any, index: number) => (
