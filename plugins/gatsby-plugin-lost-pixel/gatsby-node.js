@@ -35,7 +35,14 @@ exports.onPostBuild = async ({ graphql, pathPrefix, basePath = pathPrefix }, plu
       // Skip explicitly excluded paths
       if (excludedPaths.includes(edge.node.path)) return null
 
-      console.log({ path: edge.node.path })
+      if (edge.node.path.includes('guides-deployment')) {
+        console.log('found guides-deployment, waiting')
+        return {
+          path: edge.node.path,
+          name: edge.node.path.split('/').join('-'),
+          waitBeforeScreenshot: 2000,
+        }
+      }
 
       return {
         path: edge.node.path,
