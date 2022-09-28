@@ -19,14 +19,14 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   font-size: ${(p) => p.theme.fontSizes[14]};
-  line-height: 1.25;
+  /* line-height: 1.25; */
   margin-bottom: ${(p) => p.theme.space[12]};
   position: relative;
   a {
-    transition: color 150ms ease 0s;
+    /* transition: color 150ms ease 0s; */
     color: ${(p) => p.theme.colors.gray600} !important;
     text-decoration: none;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     &:hover {
       color: ${(p) => p.theme.colors.gray900} !important;
     }
