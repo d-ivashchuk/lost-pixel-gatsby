@@ -1,11 +1,22 @@
 module.exports = {
   pageShots: {
     // write your pages here
-    pages: [],
+    pages: [
+      {
+        path: '/reference/api-reference/prisma-schema-reference',
+        name: '-reference-api-reference-prisma-schema-reference',
+        waitBeforeScreenshot: 5000,
+      },
+      {
+        path: '/reference/api-reference/prisma-client-reference',
+        name: '-reference-api-reference-prisma-client-reference',
+        waitBeforeScreenshot: 5000,
+      },
+    ],
     // you create your pages here & both are composed
     // pagesJsonUrl: 'http://localhost:9000/lost-pixel.json',
     // baseUrl: 'http://localhost:9000',
-    pagesJsonUrl: 'http://172.17.0.1:9000/lost-pixel.json',
+    // pagesJsonUrl: 'http://172.17.0.1:9000/lost-pixel.json',
     baseUrl: 'http://172.17.0.1:9000',
   },
   lostPixelProjectId: 'cl8fqnk7033927301m93b5rhis9',
@@ -17,7 +28,6 @@ module.exports = {
   commitRefName: process.env.GITHUB_REF_NAME,
   commitHash: process.env.COMMIT_HASH,
   compareEngine: 'odiff',
-  threshold: 0.02,
   s3: {
     endPoint: 'ams3.digitaloceanspaces.com',
     bucketName: 'beta-seven-turtle-time-blue-narrow',
