@@ -45,7 +45,7 @@ exports.onPostBuild = async ({ graphql, pathPrefix, basePath = pathPrefix }, plu
         return {
           path: edge.node.path,
           name: edge.node.path.split('/').join('-'),
-          waitBeforeScreenshot: 5000,
+          waitBeforeScreenshot: 1000,
         }
       }
 
