@@ -31,14 +31,12 @@ module.exports = {
       visibility: hidden;
     }
 
-    body * {
-      -webkit-transition-duration: 0s;
-      -moz-transition-duration: 0s;
-      -o-transition-duration: 0s;
-      transition-duration: 0s;
-      transition:none;
+    /* do not show underline animation */
+    #toc-holder  a {
+      background-size: 0 !important;
+      background-image: none !important;
     }
-
+    /* skip image display within section */
     section img {
       visibility: hidden;
     }
