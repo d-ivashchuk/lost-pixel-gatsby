@@ -5,12 +5,12 @@ module.exports = {
       {
         path: '/reference/api-reference/prisma-schema-reference',
         name: '-reference-api-reference-prisma-schema-reference',
-        waitBeforeScreenshot: 5000,
+        waitBeforeScreenshot: 30000,
       },
       {
         path: '/reference/api-reference/prisma-client-reference',
         name: '-reference-api-reference-prisma-client-reference',
-        waitBeforeScreenshot: 5000,
+        waitBeforeScreenshot: 30000,
       },
     ],
     // you create your pages here & both are composed
