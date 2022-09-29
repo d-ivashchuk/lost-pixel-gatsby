@@ -31,6 +31,14 @@ module.exports = {
       visibility: hidden;
     }
 
+    body * {
+      -webkit-transition-duration: 0s;
+      -moz-transition-duration: 0s;
+      -o-transition-duration: 0s;
+      transition-duration: 0s;
+      transition:none;
+    }
+
     section img {
       visibility: hidden;
     }
