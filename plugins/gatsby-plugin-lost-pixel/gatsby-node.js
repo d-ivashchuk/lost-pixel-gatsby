@@ -41,6 +41,7 @@ exports.onPostBuild = async ({ graphql, pathPrefix, basePath = pathPrefix }, plu
       // Allow headless browser to render super long pages before screenshoting them
 
       if (longPages.includes(edge.node.path)) {
+        console.log('Landed into long page, increasing wait time before screenshot')
         return {
           path: edge.node.path,
           name: edge.node.path.split('/').join('-'),
