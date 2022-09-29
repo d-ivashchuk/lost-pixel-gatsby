@@ -11,6 +11,10 @@ const excludedPaths = [
   '/getting-started/setup-prisma/start-from-scratch-sql ',
   '/getting-started/setup-prisma/start-from-scratch-prisma-migrate',
 ]
+const longPages = [
+  '/reference/api-reference/prisma-client-reference',
+  '/reference/api-reference/prisma-schema-reference',
+]
 
 exports.onPostBuild = async ({ graphql, pathPrefix, basePath = pathPrefix }, pluginOptions) => {
   const outputFile = path.join(publicPath, '/lost-pixel.json')
@@ -34,6 +38,15 @@ exports.onPostBuild = async ({ graphql, pathPrefix, basePath = pathPrefix }, plu
     .map((edge, i) => {
       // Skip explicitly excluded paths
       if (excludedPaths.includes(edge.node.path)) return null
+      // Allow headless browser to render super long pages before screenshoting them
+
+      if (longPages.includes(edge.node.path)) {
+        return {
+          path: edge.node.path,
+          name: edge.node.path.split('/').join('-'),
+          waitBeforeScreenshot: 5000,
+        }
+      }
 
       return {
         path: edge.node.path,
