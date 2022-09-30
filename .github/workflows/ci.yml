@@ -34,7 +34,7 @@ jobs:
         run: npx gatsby serve --host 172.17.0.1 &
 
       - name: Lost Pixel
-        uses: lost-pixel/lost-pixel@450d222a03454c1c85760bdbb0814eb5b8fb6484
+        uses: lost-pixel/lost-pixel@92cd779ced349200867d4efe56ef70fac46bbba7
         env:
           S3_ACCESS_KEY: ${{ secrets.S3_ACCESS_KEY }}
           S3_SECRET_KEY: ${{ secrets.S3_SECRET_KEY }}
